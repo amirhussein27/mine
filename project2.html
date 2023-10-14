@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<input type="text" id="mytext">
+<h1 id="result"></h1>
+<button onclick="myfunction();">
+  کلیک کنید
+</button>
+
+
+
+<script>
+function myfunction (){
+
+var mytext = document.getElementById("mytext").value;
+var result = document.getElementById("result");
+var admin = "free";
+
+if(mytext==""){result.innerHTML="empty"}
+else if(mytext==admin){result.innerHTML="bravo"}
+else{result.innerHTML="wrong"}
+
+}
+
+
+</script>
+
+
+
+</html>

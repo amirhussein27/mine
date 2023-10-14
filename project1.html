@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p><b>یک عدد وارد کن</b></p>
+<input type="text" id="UserNumber">
+<button onclick="zooj_ya_fard();">کلیک کنید</button>
+
+<h2 id="Result"></h2>
+
+<script>
+
+function zooj_ya_fard(){
+ var User_Number = document.getElementById("UserNumber").value;
+ var Result = document.getElementById("Result");
+
+ if( User_Number == "" ){
+alert("عدد را وارد کنید");
+ }else if( User_Number % 2 == 0 ){
+   Result.innerHTML="زوج است";
+ }else{
+   Result.innerHTML="فرد است";
+ }
+
+}
+
+</script>
+
+</body>
+</html>
