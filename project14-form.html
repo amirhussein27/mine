@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+*{
+ box-sizing: border-box;
+}
+
+body {
+ font-family: tahoma;
+ background-color: #f2f2f2;
+ direction:rtl;
+}
+
+.MyBox{
+ border-radius: 5px;
+ background-color: #fff;
+ box-shadow: 2px 5px 30px rgba(0,0,0,.1);
+ padding: 20px;
+ max-width:500px;
+ margin:0 auto;
+}
+
+input[type=text]{
+ width: 100%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ display: block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+}
+
+input[type=submit]{
+ width: 100%;
+ background-color: #04AA6D;
+ color: white;
+ padding: 14px 20px;
+ margin: 8px 0;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+}
+
+#un_error , #uf_error{
+ background-color: red;
+ color:#fff;
+ display:none;
+ font-size:13px;
+ padding:5px 10px;
+ border-radius:10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="MyBox">
+<form action="files/get_data2.php" method="post" id="MyForm" onsubmit="return My_Validate();">
+ <label for="uname">نام شما :</label>
+ <input type="text" id="uname" name="User_Name" placeholder="نام شما در اینجا">
+ <p><span id="un_error"></span></p>
+
+ <label for="ufamily">فامیلی شما :</label>
+ <input type="text" id="ufamily" name="User_Family" placeholder="فامیلی شما در اینجا">
+ <p><span id="uf_error"></span></p>
+
+ <input type="submit" value="ارسال">
+</form>
+</div>
+
+<script>
+
+function My_Validate(){
+
+ var uname_error , ufamily_error;
+ uname_error = document.getElementById("un_error");
+ ufamily_error = document.getElementById("uf_error");
+ 
+ var UserName = document.forms["MyForm"]["User_Name"].value;
+ var UserFamily = document.forms["MyForm"]["User_Family"].value;
+ 
+ if ( UserName == "" && UserFamily == "" ){
+  uname_error.style.display = "block";
+  ufamily_error.style.display = "block";
+  uname_error.innerHTML ="لطفا نام وارد کنید";
+  ufamily_error.innerHTML ="لطفا فامیلی وارد کنید";
+  return false;
+ }
+ 
+ else if ( UserName != "" && UserFamily == "" ){
+  ufamily_error.style.display = "block";
+  uname_error.style.display = "none";
+  ufamily_error.innerHTML ="لطفا فامیلی وارد کنید";
+  uname_error.innerHTML ="";
+  return false;
+ }
+ 
+ else if ( UserName == "" && UserFamily != "" ){
+  ufamily_error.style.display = "none";
+  uname_error.style.display = "block";
+  uname_error.innerHTML ="لطفا نام وارد کنید";
+  ufamily_error.innerHTML ="";
+  return false;
+ }
+ 
+ else{
+  alert("همه چی درسته و فرم ارسال شد");
+ }
+
+}
+
+</script>
+
+</body>
+</html>

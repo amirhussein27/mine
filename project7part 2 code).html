@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        body{
+            text-align:center;
+            background-color:#fff;
+ box-shadow: 2px 5px 30px rgba(0,0,0,.1);
+ max-width:500px;
+ min-height:200px;
+ margin:10px auto;
+ padding:10px;
+
+        }
+        #taeed,#ersal,#inp,#nice,#im{
+            display: none;
+        }
+        #result
+        {
+            color: brown;
+        }
+    </style>
+<p id="barro">
+    بروی دکمه کلیک کن تا کد تولید بشه 
+</p>
+<button id="tolid" onclick="tolidcode(1000,9999);">
+    تولید کن
+</button>
+<button id="taeed" onclick="taeedcode();">
+    تایید کن
+</button>
+<img id="im" src="https://amireshraghi.ir/wp-content/uploads/2023/09/%DA%AF%DB%8C%D9%81.gif">
+<h1 id="result"></h1>
+<p id="ersal"></p>
+<p id="BoxUserCode"></p>
+<p id="nice">niiiiiicccccccceeeeee</p>
+<input type="text" placeholder="کد را اینجا وارد کن"
+ maxlength="4" id="inp">
+<script>
+function tolidcode(min,max){
+    var result=Math.floor(Math.random()*(max-min)) + min;
+    document.getElementById("result").innerHTML=result;
+    document.getElementById("ersal").innerHTML="کد ارسال شد لطفا تاییدش کنید";
+    document.getElementById('BoxUserCode').style.display = "block";
+    document.getElementById("taeed").style.display="inline-block";
+    document.getElementById("inp").style.display="inline-block";
+    document.getElementById("tolid").style.display="none";
+}
+function taeedcode (){
+var usercode,taeedshode;
+usercode=document.getElementById("inp");
+taeedshode=document.getElementById("result").innerHTML;
+
+
+    if(usercode.value==""){
+        alert("ensert code please");
+    }
+else if(usercode.value==taeedshode)
+{
+    usercode.style.display = "none";
+    result.style.display = "none";
+  taeed.style.display = "none";
+  barro.style.display = "none";
+  nice.style.display = "inline-block";
+}
+else{
+    alert("wrong code");
+}
+}
+
+
+
+</script>
+
+</body>
+</html>

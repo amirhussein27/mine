@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>
+    بروی دکمه کلیک کن تا به اندازه 10کاراکتر متن تصادفی تولید شه
+
+</p>
+<h1 id="result"></h1>
+<button onclick="Random_Text(10);">کلیک کنید</button>
+<script>
+function Random_Text(My_Length){
+var Result, Result_Export,My_charachters,characters_Length;
+Result='';
+Result_Export=document.getElementById("result");
+
+My_charachters = 
+'1ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()?';
+characters_Length=My_charachters.length;
+
+
+for( var i=0; i< My_Length ;i++){
+    Result=Result + My_charachters.charAt(Math.floor(Math.random()*characters_Length));
+
+}
+Result_Export.innerHTML=Result;
+}
+
+</script>
+
+</body>
+</html>

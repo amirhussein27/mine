@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body onload="get();">
+<button onclick="set();">ست کن</button>
+<h1 id="result"></h1>
+<script>
+function set(){
+
+
+var username=prompt("your name?");
+
+if(username==""){
+  alert("enter something")
+}
+else {
+  localStorage.setItem("username",user_name);
+  get();
+}
+}
+function get(){
+
+var result=document.getElementById("result");
+var uname=localStorage.getItem("username")
+result.innerHTML="hi"+uname+"what's up?"
+
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body{
+      direction: rtl;
+      text-align: center;
+    }
+  
+  </style>
+<body>
+  <div id="kol">
+<p id="vared">
+  نام کاربری و رمز را وارد نمایید</p>
+  <div id="penhan">
+  <p>
+    نام کاربری : free-learn
+  </p>
+  <p>
+    رمز : 12345
+  </p>
+  <div id="por">
+<input type="text" id="username"placeholder="نام کاربری">
+</div>
+<br>
+<br>
+<div id="por2">
+<input type="text" id="userpass"placeholder="رمز عبور ">
+<div id="por3"></div>
+</div>
+<br>
+<br>
+<button onclick="myfunc();">
+  کلیک کنید
+</button>
+</div>
+<h1 id="result" style="color: aliceblue;"></h1>
+<script>
+  function myfunc(){
+
+ 
+  var username=document.getElementById("username").value;
+  var userpass=document.getElementById("userpass").value;
+  
+var myusername="free-learn";
+var myuserpass=12345;
+
+var vared=document.getElementById("vared");
+var penhan=document.getElementById("penhan");
+var por=document.getElementById("por");
+var por2=document.getElementById("por2");
+var por3=document.getElementById("por3");
+var kol=document.getElementById("kol");
+
+
+if(username=="" && userpass=="")
+{
+
+  alert("متن خالیست");
+  por.style.backgroundColor = "gray";
+  por2.style.backgroundColor = "gray";
+  result.innerHTML="قسمت های خاکستری را پر کن";
+
+
+}
+else if(username==myusername && userpass==myuserpass)
+{
+  vared.style.display = "none";
+  penhan.style.display = "none";
+  kol.style.backgroundColor = "green";
+
+  result.innerHTML="bravooo";
+
+}
+else if(username!=myusername && userpass==myuserpass)
+{
+  alert("نام کاربری اشتباه ولی رمز عبور صحیح ");
+
+}
+else if(username==myusername && userpass!=myuserpass)
+{
+  alert("نام کاربری صحیح ولی رمز عبور اشتباه است ");
+
+}
+
+
+}
+</script>
+</div>
+</body>
+</html>

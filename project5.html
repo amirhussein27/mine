@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+var Daneshjoo, MyResult,teror , Array_Length, i;
+Daneshjoo = ["Sadegh", "Ali", "Maryam", "Elnaz"];
+
+// بدست آوردن تعداد عددی کل آیتم های آرایه
+Array_Length = Daneshjoo.length;
+
+// قرار دادن دونه دونه آیتم ها در یک لیست نامرتب
+MyResult = "<ul>";
+for (i = 0; i < Array_Length; i++){
+ MyResult += "<li>" + Daneshjoo[i] + "</li>";
+}
+MyResult += "</ul>";
+teror=Daneshjoo.sort();
+
+var Result = teror.join(" <br> ");
+// چاپ کردن لیست آیتم ها در خروجی
+document.write( MyResult );
+
+document.write( Result );
+</script>
+
+</body>
+</html>

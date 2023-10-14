@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>
+  فقط حروف فارسی میتوانید وارد نمایید</p>
+<input type="text" id="myinput">
+<button onclick="myfunc();">
+  کلیک کنید
+</button>
+<h1 id="result"></h1>
+<script>
+function myfunc(){
+var result = document.getElementById("result");
+var Myinput=document.getElementById("myinput").value;
+
+var myregexp=new
+regexp(/[\u0622\u0627\u0628\u067E\u062A-\u062C\u0686\u062D-\u0632\u0698\u0633-\u063A\u0641\u0642\u06A9\u06AF\u0644-\u0648\u06CC]/g);
+var myexcec=myregexp.test(myinput);
+if(Myinput==""){
+  alert("empty 404")
+}
+
+else if(myexec==true){
+result.innertHTML="افرین درسته";
+}
+else{
+  result.innertHTML="متن وارد شده فارسی نیس";
+}
+}
+</script>
+
+</body>
+</html>

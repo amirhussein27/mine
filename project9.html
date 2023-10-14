@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>
+  تولید عدد تصادفی از بین عدد 1 تا عددی که شما مشخص کردید
+</p>
+<input type="text" id="un">
+<button onclick="MyRandom();">
+  کلیک کنید
+</button>
+<h1 id="result"></h1>
+<script>
+function MyRandom(){
+  var usernumber,result;
+document.getElementById("un").value=usernumber;
+document.getElementById("result")=result;
+
+
+if(usernumber==""){
+  alert("empty");
+}
+else{
+var user_random_Number=
+  Math.floor(Math.random()*usernumber)+1;
+  Result.innerHTML= user_random_Number;
+}
+}
+
+</script>
+
+</body>
+</html>

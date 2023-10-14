@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <style>
+  body{
+    text-align: center;
+  }
+ </style>
+<body dir="rtl">
+<p>
+  لطفا کلمه free-learn یا ali یا test رو در باکس زیر وارد نمایید و اینتر بزنید</p>
+<input type="text" id="username" onkeyup="check();">
+
+<h1 id="result"></h1>
+<script>
+function check(){
+var username=document.getElementById("username").value;
+var result=document.getElementById("result");
+
+
+switch(username){
+
+case "test":
+result.innerHTML="hi test how r u?";
+break;
+
+case "ali":
+ result.innerHTML = "سلام علی چطوری؟";
+break;
+
+}
+}
+</script>
+
+</body>
+</html>
