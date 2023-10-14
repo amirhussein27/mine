@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<button id="btn" onclick="setme();" >
+  ست کردن رویداد
+</button>
+<br>
+<br>
+<button id="btn2" onclick="remove();"  >
+  حذف کردن رویداد
+</button>
+<br>
+<br>
+<button id="btn3">
+    کلیک کن
+</button>
+<script>
+
+
+function setme(){
+  var btn=document.getElementById("btn3");
+btn.addEventListener("click", payam);
+}
+function remove(){
+  var btn2=document.getElementById("btn3");
+  btn2.removeEventListener("click",payam);
+}
+function payam(){
+alert("salam khobi?");
+
+}
+
+</script>
+
+
+</body>
+</html>

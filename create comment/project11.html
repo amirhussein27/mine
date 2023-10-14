@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="func();">
+     ایجاد کن
+  </button>
+  <div id="mybox"></div>
+ <p id="result"></p>
+<script>
+function func(){
+var mybox=document.getElementById("mybox");
+var result=document.getElementById("result");
+var mycomment=document.createComment("avalin comment");
+mybox.appendChild(mycomment);
+
+  result.innerHTML="ijad shod";
+}
+</script>
+
+</body>
+</html>
