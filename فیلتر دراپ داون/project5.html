@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .drop{
+            display: inline-block;
+            position: relative;
+        }
+       a{
+        display: block;
+        text-decoration: none;
+        color: black;
+        background-color: bisque;
+        cursor: pointer;
+padding: 5px 5px 15px 15px;       }
+a:hover{
+    background-color: aqua;
+}
+       input{
+        border: 1px gray solid;
+        display: none;
+        padding: 5px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+       }
+        #dropdown{
+            position: relative;
+        }
+        #myinp{
+display: block;
+        }
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            z-index: 1;
+
+        }
+        .show {display: block;}
+    </style>
+<body><div class="drop">
+<button onclick="myfunc()">dropdown<i style='font-size:24px' class='fas'>	&#xe159;
+</button>
+<div id="dropdown" class="dropdown-content">
+
+<input placeholder="Search" type="text" id="myinp" onkeyup="filterfunc()">
+<a href="#about">About</a>
+<a  href="#base">base</a>
+<a href="#blog">blog</a>
+<a href="#contact">contact</a>
+<a href="#custom">custom</a>
+<a href="#support">support</a>
+<a href="#tools">tools</a>
+</div>
+</div>
+<script>
+function myfunc(){
+    document.getElementById("dropdown").classList.toggle("show");
+}
+function filterfunc(){
+    var input = document.getElementById("myinp");
+    var filter=input.value.toUpperCase();
+    var div=document.getElementById("dropdown");
+    var a=div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
